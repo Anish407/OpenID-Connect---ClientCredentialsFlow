@@ -21,6 +21,7 @@ namespace IdentitySample.IDP
             services.AddIdentityServer()
                 .AddInMemoryApiResources(IDPData.GetApiResources)
                 .AddInMemoryClients(IDPData.GetClients)
+                .AddInMemoryIdentityResources(IDPData.GetIdentityResources)
                 .AddDeveloperSigningCredential();
         }
 
@@ -36,7 +37,7 @@ namespace IdentitySample.IDP
 
             //this calls addAuthentication internally
             app.UseIdentityServer();
-
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();

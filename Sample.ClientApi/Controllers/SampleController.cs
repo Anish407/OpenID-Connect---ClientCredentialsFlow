@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using IdentityModel.Client;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sample.ClientApi.Controllers
 {
+   // [Authorize]
     public class SampleController : Controller
     {
         public SampleController(IHttpClientFactory httpClientFactory)
